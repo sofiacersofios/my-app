@@ -13,9 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Login to Docker Hub
+      - name: Log in to Docker Hub
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
-
+      
       - name: Build and tag Docker image
         run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/react-app:latest .
         working-directory: ./path/to/your/react/app
